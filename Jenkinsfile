@@ -11,17 +11,12 @@ pipeline {
           stage ('Build') {
               steps {
                   sh "make clean && make all"
-                  sh "make test"
-              }
-          }
-          stage ('Publish test') {
-              steps {
-                  junit 'out/bin/results_junit.xml'
+                  sh "./gredlew publishToMavenLocal"
               }
           }
           stage ('Archive') {
               steps {
-                  archiveArtifacts 'out/bin/main'
+                  archiveArtifacts 'build/distributions/*.zip'
               }
           }
       }
