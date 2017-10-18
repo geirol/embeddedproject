@@ -1,6 +1,6 @@
 pipeline {
       agent {
-            docker { image 'praqma/native-make' }
+            docker { image 'Dockerfile' }
       }
       stages {
           stage ('Build') {
