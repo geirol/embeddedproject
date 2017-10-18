@@ -9,7 +9,6 @@ pipeline {
       stages {
           stage ('Build') {
               steps {
-                  sh "make clean && make all"
                   sh "./gradlew publish"
               }
           }
