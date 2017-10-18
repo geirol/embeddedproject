@@ -3,11 +3,6 @@ pipeline {
             docker { image 'praqma/native-make' }
       }
       stages {
-          stage ('Pull code') {
-              steps {
-                  git 'https://github.com/geirol/embeddedproject.git/'
-              }
-          }
           stage ('Build') {
               steps {
                   sh "make clean && make all"
