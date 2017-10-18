@@ -10,7 +10,7 @@ pipeline {
           stage ('Build') {
               steps {
                   sh "make clean && make all"
-                  sh "./gredlew publish"
+                  sh "./gradlew publish"
               }
           }
           stage ('Archive') {
