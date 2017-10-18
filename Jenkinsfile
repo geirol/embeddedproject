@@ -1,5 +1,7 @@
 pipeline {
-      agent any
+      agent {
+            docker { image praqma/native-make }
+      }
       stages {
           stage ('Pull code') {
               steps {
